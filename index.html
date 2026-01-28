@@ -48,9 +48,15 @@ Time : <input type="time">
         User Id : <input type="text">
             Password : <input type="password">
          </p>
+	</form>
 	<p>
-         prize range: <input type="range" min="1000" max="5000">
+         <form oninput="x.value=parseInt(pr.value)">
+    prize range: <input type="range" id="pr" min="1000" max="10000">
+         Rs. <output name="x" for="pr"> </output> 
+
+
          </p>
+			 </form>
 <p>
  <input type="submit" color="red">
  <input type="reset">
@@ -174,6 +180,7 @@ Time : <input type="time">
 </body>
 
 </html>
+
 
 
 
