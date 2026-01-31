@@ -1,13 +1,133 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Terix Vision 10</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* CENTERED LOGIN FORM */
+        #loginForm {
+            background: white;
+            width: 350px;
+            padding: 40px;
+            margin: 100px auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        #loginForm h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        #loginForm input[type="text"],
+        #loginForm input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #loginForm button {
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #loginForm button:hover {
+            background: #45a049;
+        }
+
+        .error {
+            color: red;
+            display: none;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* DASHBOARD STYLING */
+        #dashboard {
+            display: none;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .card {
+            display: inline-block;
+            background: white;
+            padding: 20px;
+            margin: 10px;
+            width: 180px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        #dashboard h2 {
+            color: #333;
+        }
+
+        #dashboard button {
+            background: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #dashboard button:hover {
+            background: #d32f2f;
+        }
+    </style>
+
+    <script>
+        function login() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+            if (user === "jharkhand" && pass === "845489") {
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("dashboard").style.display = "block";
+                document.getElementById("errorMsg").style.display = "none";
+            } else {
+                document.getElementById("errorMsg").style.display = "block";
+            }
+        }
+    </script>
 </head>
 
 <body>
-<!--forms in html -->
 
+<!-- ================= LOGIN FORM ================= -->
+<div id="loginForm">
+    <h2>Login</h2>
 
-<form>
+    <p class="error" id="errorMsg">Wrong username or password</p>
+
+    <input type="text" id="username" placeholder="Enter User ID">
+    <input type="password" id="password" placeholder="Enter Password">
+
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- ================= DASHBOARD ================= -->
+<div id="dashboard">
+   <form>
     <p>
     First name : <input type="text" placeholder="Enter your First " autofocus>
      </p> 
@@ -170,19 +290,8 @@ Time : <input type="time">
 
 				</iframe>
 
-
-
-
-
-
-	
+    <button onclick="location.reload()">Logout</button>
+</div>
 
 </body>
-
 </html>
-
-
-
-
-
-
