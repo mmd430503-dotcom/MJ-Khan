@@ -1,332 +1,115 @@
-<!DOCTYPE html>  <html>  
-<head>  
-    <title>Terix Vision 10</title>  <style>  
-    body {  
-        font-family: Arial, sans-serif;  
-        background: linear-gradient(to right, #74ebd5, #ACB6E5);  
-        margin: 0;  
-        padding: 0;  
-    }  
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terix Vision 10</title>
 
-    /* CENTERED LOGIN FORM */  
-    #loginForm {  
-        background: white;  
-        width: 350px;  
-        padding: 40px;  
-        margin: 100px auto;  
-        border-radius: 10px;  
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);  
-    }  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            margin: 0;
+            padding: 0;
+        }
 
-    #loginForm h2 {  
-        text-align: center;  
-        margin-bottom: 30px;  
-        color: #333;  
-    }  
+        /* CENTERED LOGIN FORM */
+        #loginForm {
+            background: white;
+            width: 350px;
+            padding: 40px;
+            margin: 100px auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
 
-    #loginForm input[type="text"],  
-    #loginForm input[type="password"] {  
-        width: 100%;  
-        padding: 12px;  
-        margin: 10px 0 20px 0;  
-        border: 1px solid #ccc;  
-        border-radius: 5px;  
-    }  
+        #loginForm h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
 
-    #loginForm button {  
-        width: 100%;  
-        padding: 12px;  
-        background: #4CAF50;  
-        border: none;  
-        border-radius: 5px;  
-        color: white;  
-        font-size: 16px;  
-        cursor: pointer;  
-        transition: 0.3s;  
-    }  
+        #loginForm input[type="text"],
+        #loginForm input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-    #loginForm button:hover {  
-        background: #45a049;  
-    }  
+        #loginForm button {
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    .error {  
-        color: red;  
-        display: none;  
-        text-align: center;  
-        margin-bottom: 10px;  
-    }  
+        #loginForm button:hover {
+            background: #45a049;
+        }
 
-    /* DASHBOARD STYLING */  
-    #dashboard {  
-        display: none;  
-        padding: 20px;  
-        background: #f5f5f5;  
-    }  
+        .error {
+            color: red;
+            display: none;
+            text-align: center;
+            margin-bottom: 10px;
+        }
 
-    .card {  
-        display: inline-block;  
-        background: white;  
-        padding: 20px;  
-        margin: 10px;  
-        width: 180px;  
-        text-align: center;  
-        border-radius: 10px;  
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);  
-    }  
+        /* DASHBOARD STYLING */
+        #dashboard {
+            display: none;
+            padding: 20px;
+            background: #f5f5f5;
+        }
 
-    #dashboard h2 {  
-        color: #333;  
-    }  
+        .card {
+            display: inline-block;
+            background: white;
+            padding: 20px;
+            margin: 10px;
+            width: 180px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
 
-    #dashboard button {  
-        background: #f44336;  
-        color: white;  
-        padding: 10px 20px;  
-        border: none;  
-        border-radius: 5px;  
-        cursor: pointer;  
-    }  
+        #dashboard h2 {
+            color: #333;
+        }
 
-    #dashboard button:hover {  
-        background: #d32f2f;  
-    }  
-</style>  
+        #dashboard button {
+            background: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-<script>  
-    function login() {  
-        let user = document.getElementById("username").value;  
-        let pass = document.getElementById("password").value;  
+        #dashboard button:hover {
+            background: #d32f2f;
+        }
+    </style>
 
-        if (user === "jharkhand" && pass === "845489") {  
-            document.getElementById("loginForm").style.display = "none";  
-            document.getElementById("dashboard").style.display = "block";  
-            document.getElementById("errorMsg").style.display = "none";  
-        } else {  
-            document.getElementById("errorMsg").style.display = "block";  
-        }  
-    }  
-</script>
+    <script>
+        function login() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
 
-</head>  <body>  <!-- ================= LOGIN FORM ================= -->  <div id="loginForm">  
-    <h2>Login</h2>  <p class="error" id="errorMsg">Wrong username or password</p>  
-
-<input type="text" id="username" placeholder="Enter User ID">  
-<input type="password" id="password" placeholder="Enter Password">  
-
-<button onclick="login()">Login</button>
-
-</div>  <!-- ================= DASHBOARD ================= -->  <div id="dashboard">  
-   <form>  
-    <p>  
-    First name : <input type="text" placeholder="Enter your First " autofocus>  
-     </p>   
-    </p>  
-    <p>  
-    Last name : <input type="text" placeholder="Enter your last name ">  
-     </p>  
-	<p> Gender:<br>   
-            <input type="radio" name="gender"> Male  
-            <input type="radio" name="gender"> Female  
-            <input type="radio" name="gender"> Transgender  
-         </p>  
-    <p>  
- Address : <input type="text" placeholder="Please Enter your Address " size="50">  
-   </p>   <p>  
- city : <input type="text"  value="Mumabi" disabled>  
-   </p>  
-   <p>  
- State : <input type="text"  autocapitalize="on" maxlength="10">  
-   </p>     <p>  
- Mobile Number : <input type="number"  required>  
-   </p>  
-<p>  
- Email : <input type="email">  
-   </p>  <p>  
-  Date :<input type="date">  
-   </p>  
-   <p>  
-Time : <input type="time">  
-   </p>  
-	<p>  
-        User Id : <input type="text">  
-            Password : <input type="password">  
-         </p>  
-	</form>  
-	<p>  
-         <form oninput="x.value=parseInt(pr.value)">  
-    prize range: <input type="range" id="pr" min="1000" max="10000">  
-         Rs. <output name="x" for="pr"> </output>   </p>  
-		 </form>
-
-<p>  
- <input type="submit" color="red">  
- <input type="reset">     </p>  </form>  
-<font size="5" face="i">  
-  <marquee bgcolor="yellow" scrollamount="10px"> Tranding : 1) Im louching new you tube course <font color="red" > with Rs .99/- only/- </marquee>  <br>  <!-- Page Heading -->  
-<h1>Hi everyone, this page has all model images and names</h1>  
-
-<!-- Name List with Image Links -->  
-<h2>  
-    <ul>  
-        <li><a href="i1.jpg">Pooja</a></li>  
-        <li><a href="i2.jpg">Geeta</a></li>  
-        <li><a href="i3.jpg">Rashmi</a></li>  
-        <li><a href="i4.jpg">Neha</a></li>  
-        <li><a href="i5.jpg">Reshma</a></li>  
-    </ul>  
-</h2>  
-
-<hr size="2" color="green">  
-
-<!-- Image Gallery -->  
-<ol>  
-    <li>  
-        <a href="i1.jpg">  
-            <img src="i1.jpg" width="50">  
-        </a><br>  
-        Pooja  
-    </li>  
-
-    <li>  
-        <a href="i2.jpg">  
-            <img src="i2.jpg" width="50">  
-        </a><br>  
-        Geeta  
-    </li>  
-
-    <li>  
-        <a href="i3.jpg">  
-            <img src="i3.jpg" width="50">  
-        </a><br>  
-        Rashmi  
-    </li>  
-
-    <li>  
-        <a href="i4.jpg">  
-            <img src="i4.jpg" width="50">  
-        </a><br>  
-        Neha  
-    </li>  
-
-    <li>  
-        <a href="i5.jpg">  
-            <img src="i5.jpg" width="50">  
-        </a><br>  
-        Reshma  
-    </li>  
-</ol>  
-
-<br>  
-
-<!-- YouTube Link -->  
-<a href="https://www.youtube.com/channel/UCoXWO1XgyCs_1kFI5MTMDfg">  
-    Terix Vision Channel  
-</a>  
-<br>	<br>  
-<br>  
-
-	<!-- video tag in html-->  
-
-
-		  
-			</video>  
-
-		<video width="500" controls>  
-				<source src="Part3vid.mp4" type="video/mp4">  
-	  
-				</video>  
-
-
-<!--iframe tag-->  
-			  
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241316.22897994606!2d72.71413162639256!3d19.082806699271178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1768493536745!5m2!1sen!2sin" width="500" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
-
-
-			  
-	  
-			  
-
-
-
-			</iframe>	  
-
-			<iframe src="Nato.pdf" width="500" height="280">  
-
-			</iframe>  
-
-<button onclick="location.reload()">Logout</button>
-
-</div>  </body>  
-</html>    <button onclick="login()">Login</button>
-</div>
-
-<!-- ================= DASHBOARD ================= -->
-<div id="dashboard" style="display:none;">
-   <!-- ======= TUMHARA PEHLE WALA DASHBOARD CODE ======= -->
-   <!-- Dashboard content ko maine bilkul waise hi chod diya hai -->
-   <form>
-    <p>First name : <input type="text" placeholder="Enter your First " autofocus></p>
-    <p>Last name : <input type="text" placeholder="Enter your last name "></p>
-    <p>Gender:<br>
-        <input type="radio" name="gender"> Male
-        <input type="radio" name="gender"> Female
-        <input type="radio" name="gender"> Transgender
-    </p>
-    <p>Address : <input type="text" placeholder="Please Enter your Address " size="50"></p>
-    <p>City : <input type="text"  value="Mumabi" disabled></p>
-    <p>State : <input type="text"  autocapitalize="on" maxlength="10"></p>
-    <p>Mobile Number : <input type="number"  required></p>
-    <p>Email : <input type="email"></p>
-    <p>Date :<input type="date"></p>
-    <p>Time : <input type="time"></p>
-    <p>User Id : <input type="text"> Password : <input type="password"></p>
-   </form>
-
-   <form oninput="x.value=parseInt(pr.value)">
-    Prize range: <input type="range" id="pr" min="1000" max="10000"> Rs. <output name="x" for="pr"></output>
-   </form>
-
-   <input type="submit" color="red">
-   <input type="reset">
-
-   <marquee bgcolor="yellow" scrollamount="10px">Tranding : 1) Im louching new YouTube course <font color="red">with Rs .99/- only</font></marquee>
-
-   <h1>Hi everyone, this page has all model images and names</h1>
-   <ul>
-       <li><a href="i1.jpg">Pooja</a></li>
-       <li><a href="i2.jpg">Geeta</a></li>
-       <li><a href="i3.jpg">Rashmi</a></li>
-       <li><a href="i4.jpg">Neha</a></li>
-       <li><a href="i5.jpg">Reshma</a></li>
-   </ul>
-
-   <hr size="2" color="green">
-
-   <ol>
-       <li><a href="i1.jpg"><img src="i1.jpg" width="50"></a><br>Pooja</li>
-       <li><a href="i2.jpg"><img src="i2.jpg" width="50"></a><br>Geeta</li>
-       <li><a href="i3.jpg"><img src="i3.jpg" width="50"></a><br>Rashmi</li>
-       <li><a href="i4.jpg"><img src="i4.jpg" width="50"></a><br>Neha</li>
-       <li><a href="i5.jpg"><img src="i5.jpg" width="50"></a><br>Reshma</li>
-   </ol>
-
-   <a href="https://www.youtube.com/channel/UCoXWO1XgyCs_1kFI5MTMDfg">Terix Vision Channel</a>
-
-   <br><br>
-
-   <video width="500" controls>
-       <source src="Part3vid.mp4" type="video/mp4">
-   </video>
-
-   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241316.22897994606!2d72.71413162639256!3d19.082806699271178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1768493536745!5m2!1sen!2sin" width="500" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-   <iframe src="Nato.pdf" width="500" height="280"></iframe>
-
-   <button onclick="location.reload()">Logout</button>
-</div>
-
-</body>
-</html></head>
+            if (user === "jharkhand" && pass === "845489") {
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("dashboard").style.display = "block";
+                document.getElementById("errorMsg").style.display = "none";
+            } else {
+                document.getElementById("errorMsg").style.display = "block";
+            }
+        }
+    </script>
+</head>
 
 <body>
 
@@ -512,5 +295,3 @@ Time : <input type="time">
 
 </body>
 </html>
-
-
